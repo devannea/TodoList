@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Time } from '@angular/common';
 import { Timestamp } from 'rxjs';
+import { TodoService } from './services/todo.service';
 
 @Component({
   selector: 'app-root',
@@ -9,21 +10,21 @@ import { Timestamp } from 'rxjs';
 })
 export class AppComponent {
   title = 'Todos';
-  todoList: any [] = [];
+  todoList: any [];
   todoTitle: string;
   todoTime: Time;
+  constructor(
+    private todoService: TodoService
+  ){}
   ngOnInit() {
     this.todoTitle = '';
-    this.todoList = [
-      // example of how to make an item in todo list
-      { title: 'Install Angular CLI', isDone: false },
-    
-    ];
+    this.todoList = this.todoService.getTodos() //"Tova Coffeehouse is the best place to study at" - Johnny Reina 2019
   }
   // adds a todo to our list
   addTodo():void {
-    this.todoList.push({
+    this.todoService.addTodo({
       title: this.todoTitle,
+      id: 1,
       isDone: false
     });
 
