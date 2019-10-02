@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Todo } from '../interfaces/Todo';
+import { ITodo } from '../interfaces/ITodo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  private todos: Todo[] = [];
+  private todos: ITodo[] = [];
   constructor() { }
-  addTodo(newTodo: Todo) {
+  addTodo(newTodo: ITodo) {
     this.todos.push(newTodo)
   }
-  deleteTodo(item: Todo) {
+  deleteTodo(item: ITodo) {
     const index = this.todos.indexOf(item)
     this.todos.splice(index, 1)
   }
