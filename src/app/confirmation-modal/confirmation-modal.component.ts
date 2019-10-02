@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { TodoService } from '../services/todo.service'
 import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import { Todo } from '../interfaces/Todo';
+import { ITodo } from '../interfaces/ITodo';
 
 @Component({
   selector: 'confirmation-modal',
@@ -11,7 +11,7 @@ import { Todo } from '../interfaces/Todo';
 export class ConfirmationModalComponent implements OnInit {
   closeResult: string;
   @Input()
-  todo: Todo 
+  todo: ITodo 
   constructor(
     private modalService: NgbModal,
     private TodoService: TodoService

@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 import { TodoService } from './services/todo.service';
+import { TodoComponent } from './todo/todo.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConfirmationModalComponent
+    ConfirmationModalComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
