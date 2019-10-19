@@ -5,22 +5,25 @@ import { ITodo } from '../interfaces/ITodo';
   providedIn: 'root'
 })
 export class TodoService {
-  todoList: ITodo[] = [
-    {
-      id: 1,
-      title: "Install Angular CLI",
-      isDone: false
-    }
-  ];
+  todoList: ITodo[] = [];
+
   constructor() { }
-  addTodo(newTodo: ITodo) {
-    this.todoList.push(newTodo)
+
+  getTodos()
+  {
+    return this.todoList;
   }
-  deleteTodo(item: ITodo) {
-    const index = this.todoList.indexOf(item)
-    this.todoList.splice(index, 1)
+
+  addTodo(todo: ITodo) {
+    this.todoList.push(todo);
   }
-  getTodos() {
-    return this.todoList
+
+  deleteTodo(todo: ITodo) {
+    const index = this.todoList.indexOf(todo, 0);
+    this.todoList.splice(index,1);
+  }
+
+  getAll(): ITodo[] {
+    return this.todoList;
   }
 }
