@@ -1,31 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { MatTableModule} from '@angular/material';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
-import { TodoService } from './services/todo.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TodoComponent } from './todo/todo.component';
-import { TodoDetailsComponent } from './todo-details/todo-details.component';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { TodoGridComponent } from './todo-grid/todo-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmationModalComponent,
     TodoComponent,
-    TodoDetailsComponent
+    TodoGridComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
+    NoopAnimationsModule,
+    MatTableModule
   ],
-  providers: [
-    TodoService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
